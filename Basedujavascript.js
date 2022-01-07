@@ -111,13 +111,13 @@ alert(typeof num); // nombre
 
 /*
 Concaténation
-si l’un des opérandes est une chaîne de caractères, l’autre est automatiquement converti en chaîne de caractères.
+si lun des oeérandes est une chaîne de caractères, l’autre est automatiquement converti en chaîne de caractères.
 
 Par exemple :
 
 alert( '1' + 2 ); // "12"
 alert( 2 + '1' ); // "21"
-Exceptions: alert(2 + 2 + '1' ); // "41" et non "221"   (Attention cela va de gauche à droite)
+Exceptions: alert(2 + 2 + '1' ); // "41" et non "221"   (Attention cela va de gauche a droite)
 */
 
 
@@ -134,13 +134,13 @@ alert( counter++ ); // 0
 
 Avec Counter
 let counter = 2;
-counter++;      // fonctionne de la même manière que counter = counter + 1, mais c'est plus court
+counter++;      // fonctionne de la meme maniere que counter = counter + 1, mais c'est plus court
 alert( counter ); // 3
 
 
 Utile:
 let counter = 2;
-counter--;      // fonctionne de la même manière que counter = counter - 1, mais c'est plus court
+counter--;      // fonctionne de la meme maniere que counter = counter - 1, mais c'est plus court
 alert( counter ); // 1
 */
 
@@ -148,7 +148,7 @@ alert( counter ); // 1
 /*
 "  -9  " + 5 = "  -9  5" // (3)
 "  -9  " - 5 = -14 // (4)
-La soustraction est toujours convertie en nombres, donc elle fait de " -9 " un number -9 (en ignorant les espaces qui l’entourent).
+La soustraction est toujours convertie en nombres, donc elle fait de " -9 " un number -9 (en ignorant les espaces qui lentourent).
 */
 
 /*
@@ -159,7 +159,7 @@ alert(accessAllowed);
 */
 
 /*
-let nombre = prompt("Quel numéro à entrer" , "");
+let nombre = prompt("Quel numero a entrer" , "");
 
 if nombre == "0" {
     alert(0);
@@ -170,4 +170,39 @@ else if (nombre < 0 ){
 else{
     alert(0);
 }
+
+
+
+
+
+
+Objets
+
+nom et valeur 
+key = nom
+user[key] = valeur
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 */
+
+
+
+
