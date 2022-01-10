@@ -178,9 +178,15 @@ else{
 
 Objets
 
-nom et valeur 
-key = nom
+nom: valeur 
+key = nom ou identifiant
 user[key] = valeur
+Une propriete c'est une paire  
+{} : paires (a l'interieur il y a cle : valeur)
+Creatioin d'une propriete
+let user = {};
+ou
+let user = new Object();
 
 
 
@@ -188,9 +194,133 @@ user[key] = valeur
 
 
 
+Conversion automatique tout type en str
+Par exemple, un nombre 0devient une chaine "0"lorsqu'il est utilise comme cle de propriete
+Les autres types sont automatiquement convertis en chaines.
+
+let obj = {
+  0: "test" // same as "0": "test"
+};
+
+// both alerts access the same property (the number 0 is converted to string "0")
+alert( obj["0"] ); // test
+alert( obj[0] ); // test (same property)
+
+
+Ajout du text ( doit se faire avec des guillemets)
+let user = {};
+
+// set
+user["likes birds"] = true;
+
+// get
+alert(user["likes birds"]); // true
 
 
 
+
+
+let fruit = prompt("Which fruit to buy?", "apple");
+
+let bag = {
+  [fruit]: 5, // the name of the property is taken from the variable fruit
+};
+
+alert( bag.apple ); // 5 if fruit="apple"
+
+
+let user = {
+  name,  // same as name:name
+  age: 30
+};
+
+
+Parcourir un objet
+ for (let key in obj)
+
+typeof obj[key]
+le type d'un objet
+
+
+
+
+Let in (parcourir un objet)
+let codes = {
+  "+49": "Germany",
+  "+41": "Switzerland",
+  "+44": "Great Britain",
+  // ..,
+  "+1": "USA"
+};
+
+for (let code in codes) {
+  alert( +code ); // 49, 41, 44, 1
+}
+
+
+
+Clonage
+Clonage dun objet
+let clone = Object.assign({}, user);
+
+
+Fusion: Object.assign
+let user = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+// copies all properties from permissions1 and permissions2 into user
+Object.assign(user, permissions1, permissions2);
+
+// now user = { name: "John", canView: true, canEdit: true }
+
+Clonage imbrique
+let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+alert( user.sizes.height ); // 182
+
+
+Creation dune methode
+user = {
+  sayHi() { // same as "sayHi: function(){...}"
+    alert("Hello");
+  }
+};
+
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+// use the same function in two objects
+user.f = sayHi;
+admin.f = sayHi;
+
+// these calls have different this
+// "this" inside the function is the object "before the dot"
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+
+Creation du constructeur
+function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("Jack"); (Variable de type user)
+
+alert(user.name); // Jack
+alert(user.isAdmin); // false
 
 
 
