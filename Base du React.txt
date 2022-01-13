@@ -1,0 +1,112 @@
+Base du React
+
+Librairie JS
+JSX : composant react sous forme de balise (En gros c'est comme du html
+ )
+node npm, telechargemetn de Librairie
+
+
+Creer un composant une App
+class App extends React.Component{ (App est une classe qui herite) 
+    render(){
+        return(
+
+        )
+    }  
+}
+
+
+cst rootElements = documents.getElementById("root");
+Afficher la div App au sein de root (qui est cense etre dans le html);
+
+
+
+Methode Map
+Crer un nouveau tableau contenant le resultat d'une transformation de chacun de ses clients
+(Pour faire simple , elle fait une boucle et renvoie un qqch de nouveau)
+
+Exp: const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+
+On peut egalement ajouter des composants react au sein meme des balises
+
+Pour mettre une variable au sein de mes composants on fait {exemple}  
+
+
+Solution flechee 
+Declarer handleclick comme fonction flechee permet de conserver le "this"
+
+
+
+Evenement
+Methode setState() Demande a React dafficher le contenu
+handClick = () =>{
+    this.state({ computer: this.state.compteur + 1});
+    console.log(this.state);
+};
+
+Methode slice()
+La methode slice() renvoie un objet tableau, contenant une copie superficielle (shallow copy) d'une portion du tableau d'origine, la portion est definie par un indice de debut et un indice de fin (exclus). Le tableau original ne sera pas modifie.
+Methode .splice()
+Permet de retirer des elements a partir dun index donne dans un tableau
+
+
+
+Gerer un formulaire avec React
+
+<formonSubmit={this.handleSubmit}>
+On ne manipule pas le DOM dans le react
+
+
+
+Code du react
+import React from "react";
+import ReactDOM from "react-dom";
+
+import "./styles.css";
+
+class App extends React.Component{
+
+  state = {
+    clients: [
+      {id: 1, nom: "Lior Chamla"},
+      {id: 2, nom: "Magali Pernin"},
+      {id: 3, nom: "Joseph Durand"}
+    ]
+  };
+
+  render(){
+    const title = "Liste des clients";
+    const element = <li>Test variable</li>
+    const elements = this.state.clients.map(function(client){
+        return <li>{client.nom} <button>X</button></li>
+      })
+      return( 
+      <div>
+        <h1>Liste de clients</h1>
+        <ul>
+          <li>Lior Chamla <button>X</button></li>
+          <li>Magali Pernin <button>X</button></li>
+          <li>Joseph Durand <button>X</button></li> 
+        </ul>
+        <form>
+          <input type="text" placeholder="Ajouter un client" />
+          <button>Confirmer</button>
+        </form>
+      </div>
+      );
+  }
+}
+
+
+
+
+
+
+
+
